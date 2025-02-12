@@ -1,11 +1,11 @@
 .contactItem{
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    gap: 30px;
+    padding: 16px;
+    gap: 32px;
     width: 350px;
 }
 .contactsData{
@@ -21,10 +21,10 @@
     border: 1px solid black;
     border-radius: 4px;
     padding: 4px;
-    background-color: rgb(214, 200, 200);
+    background-color: rgb(255, 174, 243);
     height: 36px;
     width: 74px;
-    font-size: 24px;
+    font-size: 16px;
 }
 .icon{
     margin-right: 10px;

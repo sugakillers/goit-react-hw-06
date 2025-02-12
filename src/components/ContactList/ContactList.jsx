@@ -1,18 +1,31 @@
-import css from "./ContactList.module.css"
-import Contact from "../Contact/Contact"
-const ContactList = ({ contactsList, deleteContact }) => {
-return (
-    <>
-    <ul className={css.contactList}>
-    {contactsList.map(contact => {
-        return  (
-            <li className={css.item} key={contact.id}>
-            <Contact id={contact.id} name={contact.name} number={contact.number} deleteContact={deleteContact} />
-            </li>
-        );
-    })}
-    </ul></>
-);
-}
+import { useSelector } from 'react-redux';
+import { selectContacts } from '../../redux/contactsSlice';
+import { selectNameFilter } from '../../redux/filtersSlice';
+import Contact from '../Contact/Contact';
+import css from './ContactList.module.css';
 
-export default ContactList
+const ContactList = () => {
+  const contacts = useSelector(selectContacts);
+
+  const contactsFilter = useSelector(selectNameFilter);
+
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(contactsFilter.toLowerCase())
+  );
+
+  return (
+    <ul className={css.list}>
+      {filteredContacts.map(contact => {
+        return (
+          <li className={css.item} key={contact.id}>
+            <Contact contact={contact} />
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
+
+
+export default ContactList;
+

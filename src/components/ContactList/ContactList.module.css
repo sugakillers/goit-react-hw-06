@@ -1,6 +1,18 @@
-.contactList{
-    margin-left: 40px;
+.list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-}
+    gap: 12px;
+  }
+  
+  .item {
+    padding: 16px 12px;
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 4px;
+    color: rgb(255, 0, 191);
+    background-color: #fff;
+  }
+  
